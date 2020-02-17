@@ -13,7 +13,5 @@ public class Main {
         while (true) {
             ui.showMenu();
         }
-
-
     }
 }
