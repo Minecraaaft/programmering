@@ -13,7 +13,6 @@ public class TUI implements IUI {
 
     public TUI(IData data) {
         this.data = data;
-        scanner = new Scanner(System.in);
     }
 
     @Override
