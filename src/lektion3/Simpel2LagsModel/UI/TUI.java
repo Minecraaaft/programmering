@@ -112,8 +112,7 @@ public class TUI implements IUI {
     public void createIngredient() {
         System.out.println("Skriv id på den nye ingrediens ");
         try {
-            int id;
-            id =scanner.nextInt();
+            int id = scanner.nextInt();
             System.out.println("Indtast navn på ingrediensen ");
             String navn = scanner.nextLine();
             System.out.println("Indtast mængden ");
