@@ -1,3 +1,5 @@
+package lektion1.opgave1;
+
 /******************************************************************************
  *  Compilation:  javac Complex.java
  *  Execution:    java Complex
@@ -26,6 +28,8 @@
  *  tan(a)       = -6.685231390246571E-6 + 1.0000103108981198i
  *
  ******************************************************************************/
+
+import lektion1.opgave1.IComplex;
 
 import java.util.Objects;
 
@@ -58,41 +62,41 @@ public class Complex implements IComplex {
     }
 
     // return a new Complex object whose value is (this + b)
-    public Complex plus(Complex b) {
+    public IComplex plus(IComplex b) {
         Complex a = this;             // invoking object
-        double real = a.re + b.re;
-        double imag = a.im + b.im;
+        double real = a.re + ((Complex)b).re;
+        double imag = a.im + ((Complex)b).im;
         return new Complex(real, imag);
     }
 
     // return a new Complex object whose value is (this - b)
-    public Complex minus(Complex b) {
+    public IComplex minus(IComplex b) {
         Complex a = this;
-        double real = a.re - b.re;
-        double imag = a.im - b.im;
+        double real = a.re - ((Complex)b).re;
+        double imag = a.im - ((Complex)b).im;
         return new Complex(real, imag);
     }
 
     // return a new Complex object whose value is (this * b)
-    public Complex times(Complex b) {
+    public IComplex times(IComplex b) {
         Complex a = this;
-        double real = a.re * b.re - a.im * b.im;
-        double imag = a.re * b.im + a.im * b.re;
+        double real = a.re * ((Complex)b).re - a.im * ((Complex)b).im;
+        double imag = a.re * ((Complex)b).im + a.im * ((Complex)b).re;
         return new Complex(real, imag);
     }
 
     // return a new object whose value is (this * alpha)
-    public Complex scale(double alpha) {
+    public IComplex scale(double alpha) {
         return new Complex(alpha * re, alpha * im);
     }
 
     // return a new Complex object whose value is the conjugate of this
-    public Complex conjugate() {
+    public IComplex conjugate() {
         return new Complex(re, -im);
     }
 
     // return a new Complex object whose value is the reciprocal of this
-    public Complex reciprocal() {
+    public IComplex reciprocal() {
         double scale = re*re + im*im;
         return new Complex(re / scale, -im / scale);
     }
@@ -102,37 +106,37 @@ public class Complex implements IComplex {
     public double im() { return im; }
 
     // return a / b
-    public Complex divides(Complex b) {
+    public IComplex divides(IComplex b) {
         Complex a = this;
         return a.times(b.reciprocal());
     }
 
     // return a new Complex object whose value is the complex exponential of this
-    public Complex exp() {
+    public IComplex exp() {
         return new Complex(Math.exp(re) * Math.cos(im), Math.exp(re) * Math.sin(im));
     }
 
     // return a new Complex object whose value is the complex sine of this
-    public Complex sin() {
+    public IComplex sin() {
         return new Complex(Math.sin(re) * Math.cosh(im), Math.cos(re) * Math.sinh(im));
     }
 
     // return a new Complex object whose value is the complex cosine of this
-    public Complex cos() {
+    public IComplex cos() {
         return new Complex(Math.cos(re) * Math.cosh(im), -Math.sin(re) * Math.sinh(im));
     }
 
     // return a new Complex object whose value is the complex tangent of this
-    public Complex tan() {
+    public IComplex tan() {
         return sin().divides(cos());
     }
 
 
 
     // a static version of plus
-    public static Complex plus(Complex a, Complex b) {
-        double real = a.re + b.re;
-        double imag = a.im + b.im;
+    public static IComplex plus(IComplex a, IComplex b) {
+        double real = ((Complex)a).re + ((Complex)b).re;
+        double imag = ((Complex)a).im + ((Complex)b).im;
         Complex sum = new Complex(real, imag);
         return sum;
     }
