@@ -1,7 +1,8 @@
 package lektion3.Simpel2LagsModel.UI;
 
-import Simpel2LagsModel.Data.IData;
-import Simpel2LagsModel.Data.IngredientNotFoundException;
+
+import lektion3.Simpel2LagsModel.Data.IData;
+import lektion3.Simpel2LagsModel.Data.IngredientNotFoundException;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -116,9 +117,9 @@ public class TUI implements IUI {
             System.out.println("Indtast navn på ingrediensen ");
             String navn = scanner.nextLine();
             System.out.println("Indtast mængden ");
-            int mængde = scanner.nextInt();
+            int maengde = scanner.nextInt();
 
-            data.createIngredient(id, navn, mængde);
+            data.createIngredient(id, navn, maengde);
         } catch (InputMismatchException i) {
             System.out.println("Wrong input mate");
         }
