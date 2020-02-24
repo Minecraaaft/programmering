@@ -1,5 +1,7 @@
 package lektion3.Simpel2LagsModel.Data;
 
+import lektion3.Simpel2LagsModel.Exception.IngredientNotFoundException;
+
 public interface IData {
     String[] getAllIngredients(); //returnerer alle ingredienser i en String-array
     String getIngredientName(int id) throws IngredientNotFoundException; //returnerer navn for ingrediens

@@ -2,7 +2,7 @@ package lektion3.Simpel2LagsModel.UI;
 
 
 import lektion3.Simpel2LagsModel.Data.IData;
-import lektion3.Simpel2LagsModel.Data.IngredientNotFoundException;
+import lektion3.Simpel2LagsModel.Exception.IngredientNotFoundException;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

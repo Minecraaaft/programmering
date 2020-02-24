@@ -1,5 +1,7 @@
 package lektion3.Simpel2LagsModel.Data;
 
+import lektion3.Simpel2LagsModel.Exception.IngredientNotFoundException;
+
 import java.util.ArrayList;
 import java.util.List;
 
